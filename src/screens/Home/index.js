@@ -1,16 +1,12 @@
 import React from 'react';
 import {View, ImageBackground, Text, Pressable } from 'react-native';
 import styles from './styles';
-import {Auth} from 'aws-amplify';
+// import {Auth} from 'aws-amplify';
 import { FontAwesome5 } from '@expo/vector-icons';
 import {useNavigation} from '@react-navigation/native';
 
 const HomeScreen = (props) => {
   const navigation = useNavigation();
-
-  const signOut = () => {
-    Auth.signOut();
-  };
 
   return (
     <View style={{flex: 1}}>
@@ -33,18 +29,7 @@ const HomeScreen = (props) => {
         </Pressable>
       </ImageBackground>
       <Text style={{fontSize: 24, alignSelf: 'center'}}>Home, sweet home</Text>
-      <Text
-        onPress={signOut}
-        style={{
-          width: '100%',
-          textAlign: 'center',
-          color: 'red',
-          marginTop: 'auto',
-          marginVertical: 20,
-          fontSize: 20,
-        }}>
-        Sign out
-      </Text>
+    
     </View>
   );
 };
