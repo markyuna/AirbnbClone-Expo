@@ -1,20 +1,79 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+/**
+ * Sample React Native App
+ * https://github.com/facebook/react-native
+ *
+ * @format
+ * @flow strict-local
+ */
 
-export default function App() {
+import React from 'react';
+import {SafeAreaView, StyleSheet, Text} from 'react-native';
+import Navigation from './src/navigation';
+import { Amplify } from 'aws-amplify';
+import { withAuthenticator, AmplifyTheme } from 'aws-amplify-react-native';
+import config from './src/aws-exports';
+
+Amplify.configure(config);
+
+
+const App = () => {
+  // Auth.signOut();
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <SafeAreaView style={styles.root}>
+      <Navigation />
+    </SafeAreaView>
   );
-}
+};
 
 const styles = StyleSheet.create({
-  container: {
+  root: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: '#F9FBFC',
   },
 });
+
+// const signUpConfig = {
+//   header: "My Customized Sign Up",
+//   hideAllDefaults: true,
+//   signUpFields: [
+//     {
+//       label: "Full name",
+//       key: "name",
+//       required: true,
+//       displayOrder: 1,
+//       type: "string",
+//     },
+//     {
+//       label: "Email",
+//       key: "email",
+//       required: true,
+//       displayOrder: 2,
+//       type: "string",
+//     },
+//     {
+//       label: "Username",
+//       key: "preferred_username",
+//       required: true,
+//       displayOrder: 3,
+//       type: "string",
+//     },
+//     {
+//       label: "Password",
+//       key: "password",
+//       required: true,
+//       displayOrder: 4,
+//       type: "password",
+//     },
+//   ],
+// };
+
+const customTheme = {
+  ...AmplifyTheme,
+  button: {
+    ...AmplifyTheme.button,
+    backgroundColor: '#006B58',
+    borderRadius: 20,
+  }
+}
+
+export default (App);
