@@ -5,7 +5,7 @@ import {Auth} from 'aws-amplify';
 import { FontAwesome5 } from '@expo/vector-icons';
 import {useNavigation} from '@react-navigation/native';
 
-const index = (props) => {
+const HomeScreen = (props) => {
   const navigation = useNavigation();
 
   const signOut = () => {
@@ -49,4 +49,4 @@ const index = (props) => {
   );
 };
 
-export default index;
+export default HomeScreen;

@@ -8,7 +8,7 @@
 
 import React from 'react';
 import {SafeAreaView, StyleSheet, Text} from 'react-native';
-import Navigation from './src/navigation';
+import Router from './src/navigation/Router';
 import { Amplify } from 'aws-amplify';
 import { withAuthenticator, AmplifyTheme } from 'aws-amplify-react-native';
 import config from './src/aws-exports';
@@ -20,7 +20,7 @@ const App = () => {
   // Auth.signOut();
   return (
     <SafeAreaView style={styles.root}>
-      <Navigation />
+      <Router />
     </SafeAreaView>
   );
 };
