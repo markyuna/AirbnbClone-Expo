@@ -9,7 +9,7 @@ const Post = (props) => {
 
   const post = props.post;
 
-  // const navigation = useNavigation();
+  const navigation = useNavigation();
 
   const goToPostPage = () => {
     navigation.navigate('Post', {postId: post.id});

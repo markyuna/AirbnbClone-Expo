@@ -4,7 +4,6 @@ import Post from '../../components/Post';
 import { API, graphqlOperation } from "aws-amplify";
 import { listPosts } from "../../graphql/queries";
 
-
 const SearchResultsScreen = (props) => {
 
   const { guests, viewport } = props;

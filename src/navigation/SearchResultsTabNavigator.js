@@ -11,7 +11,7 @@ const Tab = createMaterialTopTabNavigator();
 const SearchResultsTabNavigator = (props) => {
 
   const [posts, setPosts] = useState([]);
-console.log(route);
+console.log(props);
   const route = useRoute();
   const { guests, viewport }  = route.params;
 

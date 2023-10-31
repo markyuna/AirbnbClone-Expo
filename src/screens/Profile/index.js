@@ -3,7 +3,7 @@ import { View, Pressable, Text } from "react-native";
 import { Auth } from 'aws-amplify';
 
 
-const ProfileScreen = () => {
+const ProfileScreen = (props) => {
 
   const signOut = () => {
     Auth.signOut();
@@ -11,18 +11,17 @@ const ProfileScreen = () => {
 
   return (
     <View style={{height: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
-      <Text
+      <Pressable
         onPress={signOut}
         style={{
           width: '100%',
-          textAlign: 'center',
-          color: 'red',
-          marginTop: 'auto',
-          marginVertical: 20,
-          fontSize: 20,
+          height: 40,
+          backgroundColor: '#cfcfcf',
+          justifyContent: 'center',
+          alignItems: 'center',
         }}>
-        Sign out
-      </Text>
+        <Text>Sign out</Text> 
+      </Pressable>
     </View>
   );
 };

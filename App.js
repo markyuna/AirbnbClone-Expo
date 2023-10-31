@@ -10,7 +10,7 @@ import React from 'react';
 import {SafeAreaView, StyleSheet, Text} from 'react-native';
 import Router from './src/navigation/Router';
 import { Amplify } from 'aws-amplify';
-import { withAuthenticator, AmplifyTheme } from 'aws-amplify-react-native';
+import { withAuthenticator, AmplifyTheme } from '@aws-amplify/ui-react-native';
 import config from './src/aws-exports';
 
 Amplify.configure(config);
@@ -67,13 +67,13 @@ const styles = StyleSheet.create({
 //   ],
 // };
 
-const customTheme = {
-  ...AmplifyTheme,
-  button: {
-    ...AmplifyTheme.button,
-    backgroundColor: '#006B58',
-    borderRadius: 20,
-  }
-}
+// const customTheme = {
+//   ...AmplifyTheme,
+//   button: {
+//     ...AmplifyTheme.button,
+//     backgroundColor: '#006B58',
+//     borderRadius: 20,
+//   }
+// }
 
 export default (App);
