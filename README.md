@@ -1,12 +1,19 @@
 AirbnbClone-Expo
 ================
 
-Description courte de votre application.
+
+---
+
+AirbnbClone-Expo est un projet personnel passionnant où j'ai eu l'opportunité d'explorer et d'apprendre de nouvelles technologies de pointe. Cette application mobile vous permet de rechercher, réserver et explorer une variété d'hébergements. Elle intègre des technologies telles qu'AWS Amplify pour l'authentification des utilisateurs et GraphQL pour la gestion des données, offrant ainsi une expérience de voyage exceptionnelle.
+
+---
 
 <p align="center">
-  <img src="assets/images/IMG_0920.jpg" width="200" heigth="500" />
-  <img src="assets/images/IMG_0921.jpg" width="200" heigth="400" />
-  <img src="assets/images/IMG_0922.jpg" width="200" heigth="500" />
+  <img src="assets/images/IMG_0920.jpg" width="200" heigth="500" padding="20"/>
+
+  <img src="assets/images/IMG_0921.jpg" width="200" heigth="400" padding="20"/>
+
+  <img src="assets/images/IMG_0922.jpg" width="200" heigth="500" padding="20"/>
 </p>
 
 ## Dépendances utilisées dans le projet
