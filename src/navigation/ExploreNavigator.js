@@ -9,7 +9,6 @@ const Stack = createNativeStackNavigator();
 const Router = (props) => {
   return (
     <Stack.Navigator>
-
       <Stack.Screen
         name={'Welcome'}
         component={HomeScreen}
@@ -23,6 +22,7 @@ const Router = (props) => {
         component={SearchResultsTabNavigator}
         options={{
           title: 'Search your destination',
+          headerShown: false,
         }}
       />
     </Stack.Navigator>

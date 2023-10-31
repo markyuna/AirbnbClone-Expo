@@ -87,7 +87,7 @@ const SearchResultsMaps = (props) => {
       >
         {posts.map(place => (
           <CustomMarker
-            key={place.id}
+            // key={place.id}
             coordinate={{ latitude: place.latitude, longitude: place.longitude }}
             price={place.newPrice}
             isSelected={place.id === selectedPlaceId}

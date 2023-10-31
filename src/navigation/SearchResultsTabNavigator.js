@@ -11,7 +11,6 @@ const Tab = createMaterialTopTabNavigator();
 const SearchResultsTabNavigator = (props) => {
 
   const [posts, setPosts] = useState([]);
-console.log(props);
   const route = useRoute();
   const { guests, viewport }  = route.params;
 
@@ -55,6 +54,7 @@ console.log(props);
   return (
     <Tab.Navigator 
       screenOptions={{
+        headerShown: false,
         activeTintColor: '#f15454',
         indicatorStyle: {
           backgroundColor: '#f15454',
