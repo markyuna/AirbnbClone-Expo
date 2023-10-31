@@ -3,7 +3,7 @@ import { View, Pressable, Text } from "react-native";
 import { Auth } from 'aws-amplify';
 
 
-const ProfileScreen = (props) => {
+const ProfileScreen = () => {
 
   const signOut = () => {
     Auth.signOut();
