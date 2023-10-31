@@ -13,7 +13,7 @@ const GuestsScreen = (props) => {
   const route = useRoute();
 
   return (
-    <View style={{justifyContent: 'space-between', height: '100%'}}>
+    <View style={{justifyContent: 'space-between', height: '100%', paddingTop: 20}}>
       <View>
         <View style={styles.row}>
           <View>

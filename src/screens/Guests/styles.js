@@ -1,6 +1,14 @@
 import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    margin: 30,
+    justifyContent: 'space-around', 
+    height: '100%', 
+    paddingTop: 20,
+    borderWidth: 1,
+  },
   button: {
     borderWidth: 1,
     width: 30,

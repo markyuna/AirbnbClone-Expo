@@ -110,8 +110,8 @@ const styles = StyleSheet.create({
     padding: 50,
   },
   logo: {
-    width: '70%',
-    maxWidth: 300,
+    width: '100%',
+    maxWidth: 400,
     maxHeight: 200,
   },
 });
