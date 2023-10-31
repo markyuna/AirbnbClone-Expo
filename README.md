@@ -1,10 +1,13 @@
 AirbnbClone-Expo
+================
 
 Description courte de votre application.
 
-![Capture d'écran 1](assets/images/IMG_0920.jpg)
-![Capture d'écran 2](assets/images/IMG_0921.jpg)
-![Capture d'écran 3](assets/images/IMG_0922.jpg)
+<p align="center">
+  <img src="assets/images/IMG_0920.jpg" width="250" />
+  <img src="assets/images/IMG_0921.jpg" width="250" />
+  <img src="assets/images/IMG_0922.jpg" width="250" />
+</p>
 
 ## Dépendances utilisées dans le projet
 
