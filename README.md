@@ -5,7 +5,7 @@ Description courte de votre application.
 
 <p align="center">
   <img src="assets/images/IMG_0920.jpg" width="200" heigth="500" />
-  <img src="assets/images/IMG_0921.jpg" width="200" heigth="500" />
+  <img src="assets/images/IMG_0921.jpg" width="200" heigth="400" />
   <img src="assets/images/IMG_0922.jpg" width="200" heigth="500" />
 </p>
 
