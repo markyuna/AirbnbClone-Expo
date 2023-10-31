@@ -1,7 +1,7 @@
 import React from 'react';
 import {View, ImageBackground, Text, Pressable } from 'react-native';
 import styles from './styles';
-// import {Auth} from 'aws-amplify';
+import {Auth} from 'aws-amplify';
 import { FontAwesome5 } from '@expo/vector-icons';
 import {useNavigation} from '@react-navigation/native';
 
@@ -28,8 +28,7 @@ const HomeScreen = (props) => {
           <Text style={styles.buttonText}>Explore nearby stays</Text>
         </Pressable>
       </ImageBackground>
-      <Text style={{fontSize: 24, alignSelf: 'center'}}>Home, sweet home</Text>
-    
+          
     </View>
   );
 };

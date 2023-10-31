@@ -4,10 +4,8 @@ import ExploreNavigator from './ExploreNavigator';
 import HomeScreen from '../screens/Home';
 import ProfileScreen from '../screens/Profile';
 
-import { FontAwesome5 } from '@expo/vector-icons';
-import Feather from 'react-native-vector-icons/Feather';
-import EvilIcons from 'react-native-vector-icons/EvilIcons';
-import PostScreen from "../screens/PostScreen";
+import { FontAwesome5, Feather } from '@expo/vector-icons';
+// import SearchResultsMaps from '../screens/SearchResultsMaps';
 
 const Tab = createBottomTabNavigator();
 
@@ -20,7 +18,6 @@ const HomeTabNavigator = (props) => {
       <Tab.Screen
         name={'Explore'}
         component={ExploreNavigator}
-        // component={PostScreen}
         options={{
           tabBarIcon: ({color}) => (
             <FontAwesome5 name="search-location" size={25} color={color} />
@@ -50,7 +47,7 @@ const HomeTabNavigator = (props) => {
         component={HomeScreen}
         options={{
           tabBarIcon: ({color}) => (
-            <Feather name="message-square" size={25} color={color} />
+            <Feather name="mail" size={25} color={color} />
           ),
         }}
       />
@@ -59,7 +56,7 @@ const HomeTabNavigator = (props) => {
         component={ProfileScreen}
         options={{
           tabBarIcon: ({color}) => (
-            <EvilIcons name="user" size={25} color={color} />
+            <FontAwesome5 name="user" size={25} color={color} />
           ),
         }}
       />

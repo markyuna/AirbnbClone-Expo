@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Text, Pressable } from "react-native";
 import styles from "./styles";
-import Entypo from "react-native-vector-icons/Entypo";
+import { Entypo } from '@expo/vector-icons';
 
 const SuggestionRow = ({item}) => (
   <View style={styles.row}>
