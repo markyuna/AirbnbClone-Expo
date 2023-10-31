@@ -75,8 +75,8 @@ const SearchResultsMaps = (props) => {
         style={{width: '100%', height: '100%'}}
         provider={PROVIDER_GOOGLE}
         initialRegion={{
-          latitude: 48.85678783220168,
-          longitude: 2.353569784009139,
+          latitude: 48.90214747577797,
+          longitude: 2.469850925555473,
           latitudeDelta: 0.8,
           longitudeDelta: 0.8,
         //   latitude: 37.78825,

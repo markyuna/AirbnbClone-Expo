@@ -1,46 +1,129 @@
 mutation createAccomodation1 {
-  createPost(input: {image: "https://res.cloudinary.com/dxrttyi2g/image/upload/v1698748293/69f20a0cec992c9e22f138ea984b0fd4_ppv7np.jpg", type: "Private Room", title: "Bright room in the heart of the city", description: "Lorem Ipsum is simplyLorem Ipsum is simply dummy text", bed: 1, bedroom: 1, maxGuests: 2, oldPrice: 50, newPrice: 40, latitude: 48.862726126311564, longitude: 2.342436448327178}) {
+  createPost(input: {
+    image: "https://res.cloudinary.com/dxrttyi2g/image/upload/v1698747322/home6.jpg", 
+    type: "Peke Room", 
+    title: "Bright room in the heart Moulin Rouge", 
+    description: "Lorem Ipsum is simplyLorem Ipsum is simply dummy text", 
+
+    bed: 1, 
+    bedroom: 1, 
+    maxGuests: 2, 
+
+    oldPrice: 50, 
+    newPrice: 40, 
+
+    latitude: 48.89112690366295, 
+    longitude: 2.332363906620356,
+    }) {
     id
   }
 }
 
 mutation createAccomodation2 {
-  createPost(input: {image: "https://res.cloudinary.com/dxrttyi2g/image/upload/v1698747322/25366e7fd14bc5b4eace1b7ad3585ce8_sznx5a.jpg", type: "Entire Flat", title: "NEW lux. apartment in the center of Santa Cruz", description: "NEW lux. apartment in the center of Santa Cruz Lorem Ipsum is simplyLorem Ipsum is simply dummy text", bed: 2, bedroom: 2, maxGuests: 4, oldPrice: 120, newPrice: 90, latitude: 48.88953803032862, longitude: 2.369565454428935}) {
+  createPost(input: {
+    image: "https://res.cloudinary.com/dxrttyi2g/image/upload/v1698749611/home1.jpg", 
+    type: "Entire Flat", 
+    title: "NEW lux. apartment in the center of Santa Cruz", 
+    description: "NEW lux. apartment in the center of Santa Cruz Lorem Ipsum is simplyLorem Ipsum is simply dummy text", 
+    
+    bed: 2, 
+    bedroom: 2, 
+    maxGuests: 4, 
+    
+    oldPrice: 120, 
+    newPrice: 90, 
+    latitude: 48.86219013562808, 
+    longitude: 2.34244722531395,
+    }) {
     id
   }
 }
 
 mutation createAccomodation3 {
-  createPost(input: {image: "48.87936165460427, 2.3311858390843687", type: "Private Blanch", title: "Green House Santa Cruz", description: "Green House Santa Cruz is simply Lorem Ipsum is simply dummy text", bed: 6, bedroom: 4, maxGuests: 12, oldPrice: 220, newPrice: 160, latitude: 48.8793969335062, longitude: 2.331153652576414}) {
+  createPost(input: {
+    image: "https://res.cloudinary.com/dxrttyi2g/image/upload/v1698747322/home2.jpg", 
+    type: "Private Blanch", 
+    title: "Green House Santa Cruz", 
+    description: "Green House Santa Cruz is simply Lorem Ipsum is simply dummy text", 
+    
+    bed: 6, 
+    bedroom: 4, 
+    maxGuests: 12, 
+
+    oldPrice: 220, 
+    newPrice: 160, 
+
+    latitude: 48.889538030328566, 
+    longitude: 2.3695225388112324,
+    }) {
     id
   }
 }
 
 mutation createAccomodation4 {
-  createPost(input: {image: "https://res.cloudinary.com/dxrttyi2g/image/upload/v1698747322/883b591c4687eefc378417c0ea1c6cc4_hyf2cr.jpg", type: "Entire Flat", title: "Typical canarian house", description: "Typical canarian house Lorem Ipsum is simply dummy text", bed: 3, bedroom: 2, maxGuests: 6, oldPrice: 130, newPrice: 110, latitude: 48.88218652693736, longitude: 2.3328759069675113}) {
+  createPost(input: {
+    image: "https://res.cloudinary.com/dxrttyi2g/image/upload/v1698747322/home3.jpg", 
+    type: "Entire Flat", 
+    title: "Typical canarian house", 
+    description: "Typical canarian house Lorem Ipsum is simply dummy text", 
+    
+    bed: 3, 
+    bedroom: 2, 
+    maxGuests: 6, 
+    oldPrice: 130, 
+
+    newPrice: 110, 
+    latitude: 48.81410766620356, 
+    longitude: 2.3559134234670007,
+    }) {
     id
   }
 }
 
 mutation createAccomodation5 {
-  createPost(input: {image: "https://res.cloudinary.com/dxrttyi2g/image/upload/v1698749611/b02473b16a11b489b42a0e99a636c21f_gnvk7o.jpg", type: "Garage", title: "Steve Jobs Garage", description: "The OG Garage where Steve Jobs started Apple", bed: 1, bedroom: 1, maxGuests: 2, oldPrice: 7500, newPrice: 7000, latitude: 48.81410060121979, longitude: 2.3559992544240815}) {
+  createPost(input: {
+    image: "https://res.cloudinary.com/dxrttyi2g/image/upload/v1698748292/home4.jpg", 
+    type: "Garage", 
+    title: "Steve Jobs Garage", 
+    description: "The OG Garage where Steve Jobs started Apple", 
+    
+    bed: 1, 
+    bedroom: 1, 
+    maxGuests: 2, 
+    
+    oldPrice: 500, 
+    newPrice: 200, 
+    latitude: 48.85497548814705, 
+    longitude: 2.2933938828236964,
+    }) {
     id
   }
 }
 
 query showAllProperties {
-  listPosts {
+  listPosts(filter: {maxGuests: {ge: 10}}) {
     items {
       id
       title
       description
+      newPrice
+      maxGuests
       bed
     }
   }
 }
 
 query showPropertiesBasedOnLocation {
-  listPosts {
+  listPosts(filter: {
+    and: {
+      latitude: {
+        between: [48.90214747577797, 48.81556220872687]
+      }, 
+      longitude: {
+        between: [2.469850925555473, 2.224219054341255]
+      }
+    }
+  }) {
     items {
       id
       title

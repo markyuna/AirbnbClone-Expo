@@ -18,7 +18,6 @@ export const getPost = /* GraphQL */ `
       longitude
       createdAt
       updatedAt
-      __typename
     }
   }
 `;
@@ -44,10 +43,8 @@ export const listPosts = /* GraphQL */ `
         longitude
         createdAt
         updatedAt
-        __typename
       }
       nextToken
-      __typename
     }
   }
 `;

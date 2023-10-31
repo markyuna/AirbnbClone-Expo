@@ -2,8 +2,8 @@
 // this is an auto generated file. This will be overwritten
 
 export const onCreatePost = /* GraphQL */ `
-  subscription OnCreatePost($filter: ModelSubscriptionPostFilterInput) {
-    onCreatePost(filter: $filter) {
+  subscription OnCreatePost {
+    onCreatePost {
       id
       image
       type
@@ -18,13 +18,12 @@ export const onCreatePost = /* GraphQL */ `
       longitude
       createdAt
       updatedAt
-      __typename
     }
   }
 `;
 export const onUpdatePost = /* GraphQL */ `
-  subscription OnUpdatePost($filter: ModelSubscriptionPostFilterInput) {
-    onUpdatePost(filter: $filter) {
+  subscription OnUpdatePost {
+    onUpdatePost{
       id
       image
       type
@@ -39,13 +38,12 @@ export const onUpdatePost = /* GraphQL */ `
       longitude
       createdAt
       updatedAt
-      __typename
     }
   }
 `;
 export const onDeletePost = /* GraphQL */ `
-  subscription OnDeletePost($filter: ModelSubscriptionPostFilterInput) {
-    onDeletePost(filter: $filter) {
+  subscription OnDeletePost {
+    onDeletePost{
       id
       image
       type
@@ -60,7 +58,6 @@ export const onDeletePost = /* GraphQL */ `
       longitude
       createdAt
       updatedAt
-      __typename
     }
   }
 `;

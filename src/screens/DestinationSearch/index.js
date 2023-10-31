@@ -17,7 +17,7 @@ const DestinationSearchScreen = (props) => {
   return (
     <View style={styles.container}>
       <GooglePlacesAutocomplete
-        placeholder='Searches for Google Places'
+        placeholder='Where are you going?'
         onPress={(data, details = null) => {
           // 'details' is provided when fetchDetails = true
           console.log(data, details);

@@ -21,7 +21,6 @@ export const createPost = /* GraphQL */ `
       longitude
       createdAt
       updatedAt
-      __typename
     }
   }
 `;
@@ -45,7 +44,6 @@ export const updatePost = /* GraphQL */ `
       longitude
       createdAt
       updatedAt
-      __typename
     }
   }
 `;
@@ -69,7 +67,6 @@ export const deletePost = /* GraphQL */ `
       longitude
       createdAt
       updatedAt
-      __typename
     }
   }
 `;
