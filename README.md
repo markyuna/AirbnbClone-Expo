@@ -8,6 +8,8 @@ AirbnbClone-Expo est un projet personnel passionnant où j'ai eu l'opportunité 
 
 ---
 
+## Captures d'écran
+
 <p align="center">
   <img src="assets/images/IMG_0920.jpg" width="200" heigth="500" padding="20"/>
 
@@ -50,18 +52,3 @@ AirbnbClone-Expo est un projet personnel passionnant où j'ai eu l'opportunité 
 - TypeScript
 - Expo
 
-## Installation
-
-Instructions d'installation de l'application et de ses dépendances.
-
-## Utilisation
-
-Instructions sur la façon d'utiliser l'application.
-
-## Captures d'écran
-
-Incluez ici d'autres captures d'écran de votre application.
-
-## Licence
-
-Indiquez la licence sous laquelle vous publiez votre application.
