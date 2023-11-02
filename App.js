@@ -9,15 +9,15 @@
 import React from 'react';
 import {SafeAreaView, StyleSheet, Text} from 'react-native';
 import Router from './src/navigation/Router';
-import { Amplify } from 'aws-amplify';
-import { withAuthenticator, AmplifyTheme } from '@aws-amplify/ui-react-native';
-import config from './src/aws-exports';
+// import { withAuthenticator, AmplifyTheme } from '@aws-amplify/ui-react-native';
 
-Amplify.configure(config);
 
+import {Amplify} from 'aws-amplify';
+import awsExports  from './src/aws-exports';
+
+Amplify.configure(awsExports);
 
 const App = () => {
-  // Auth.signOut();
   return (
     <SafeAreaView style={styles.root}>
       <Router />
@@ -32,4 +32,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default (App);
+export default App;

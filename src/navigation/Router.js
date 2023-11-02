@@ -41,7 +41,7 @@ const Router = (props) => {
     };
 
     Hub.listen('auth', listener);
-    return () => Hub.remove('auth', listener);
+    return () => Hub.listen('auth', listener);
   }, []);
 
   if (user === undefined) {
@@ -54,9 +54,16 @@ const Router = (props) => {
 
   return (
     <NavigationContainer>
+       {/* <Stack.Navigator screenOptions={{ headerShown: false }}>
+        <Stack.Screen name={"Home"} component={HomeTabNavigator} screenOptions={{ headerShown: false }}/>
+        <Stack.Screen name={"Destination Search"} component={DestinationSearchScreen} options={{ title: "Search your destination" }} />
+        <Stack.Screen name={"Guests"} component={GuestsScreen} options={{ title: "How many people?" }} />
+        <Stack.Screen name={"Post"} component={PostScreen} options={{ title: "Accommodation" }} />
+      </Stack.Navigator> */}
+
       <Stack.Navigator screenOptions={{ headerShown: false }}>
         {user ? (
-          <Stack.Screen name="Home" component={HomeTabNavigator} />
+          <Stack.Screen name={"Home"} component={HomeTabNavigator} />
         ) : (
           <>
             <Stack.Screen name="SignIn" component={SignInScreen} />
@@ -66,9 +73,9 @@ const Router = (props) => {
             <Stack.Screen name="NewPassword" component={NewPasswordScreen} />
           </>
         )}
-        <Stack.Screen name="Destination Search" component={DestinationSearchScreen} options={{ title: "Search your destination" }} />
-        <Stack.Screen name="Guests" component={GuestsScreen} options={{ title: "How many people?" }} />
-        <Stack.Screen name="Post" component={PostScreen} options={{ title: "Accommodation" }} />
+        <Stack.Screen name={"Destination Search"} component={DestinationSearchScreen} options={{ title: "Search your destination" }} />
+        <Stack.Screen name={"Guests"} component={GuestsScreen} options={{ title: "How many people?" }} />
+        <Stack.Screen name={"Post"} component={PostScreen} options={{ title: "Accommodation" }} />
       </Stack.Navigator>
     </NavigationContainer>
   );

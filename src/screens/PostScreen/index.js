@@ -3,8 +3,7 @@ import { View, Text } from "react-native";
 import DetailedPost from '../../components/DetailedPost';
 import {useRoute} from '@react-navigation/native';
 
-// import places from '../../graphql/queries';
-
+import places from '../../../assets/data/search'
 
 const PostScreen = (props) => {
   const route = useRoute();

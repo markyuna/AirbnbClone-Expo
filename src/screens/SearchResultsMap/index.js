@@ -4,16 +4,11 @@ import MapView, {Marker, PROVIDER_GOOGLE} from 'react-native-maps';
 import CustomMarker from "../../components/CustomMarker";
 import PostCarouselItem from "../../components/PostCarouselItem";
 
-import { API, graphqlOperation } from 'aws-amplify';
-import { listPosts } from '../../graphql/queries';
-
 const SearchResultsMaps = (props) => {
 
-  const { guests } = props;
+  const { posts } = props;
 
   const [ selectedPlaceId, setSelectedPlaceId] = useState(null);
-  const [ posts, setPosts] = useState([]);
-
 
   const flatlist = useRef();
   const map = useRef();
@@ -27,29 +22,6 @@ const SearchResultsMaps = (props) => {
   })
 
   const width = useWindowDimensions().width;
-
-  useEffect(() => {
-    const fetchPosts = async () => {
-      try {
-
-        const postsResult = await API.graphql(
-          graphqlOperation(listPosts, {
-            filter: {
-              maxGuests: {
-                ge: guests
-              }
-            }
-          })
-        )
-
-        setPosts(postsResult.data.listPosts.items);
-
-      } catch (e) {
-        console.log(e);
-      }
-    }
-    fetchPosts();
-  });
 
   useEffect(() => {
     if (!selectedPlaceId || !flatlist) {
@@ -75,19 +47,15 @@ const SearchResultsMaps = (props) => {
         style={{width: '100%', height: '100%'}}
         provider={PROVIDER_GOOGLE}
         initialRegion={{
-          latitude: 48.90214747577797,
-          longitude: 2.469850925555473,
+          latitude: 28.3279822,
+          longitude: -16.5124847,
           latitudeDelta: 0.8,
           longitudeDelta: 0.8,
-        //   latitude: 37.78825,
-        //  longitude: -122.4324,
-        //  latitudeDelta: 0.0922,
-        //  longitudeDelta: 0.0421,
         }}
       >
         {posts.map(place => (
           <CustomMarker
-            // key={place.id}
+            key={place.id}
             coordinate={{ latitude: place.latitude, longitude: place.longitude }}
             price={place.newPrice}
             isSelected={place.id === selectedPlaceId}

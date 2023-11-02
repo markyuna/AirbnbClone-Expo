@@ -11,8 +11,9 @@ const Tab = createMaterialTopTabNavigator();
 const SearchResultsTabNavigator = (props) => {
 
   const [posts, setPosts] = useState([]);
+
   const route = useRoute();
-  const { guests, viewport }  = route.params;
+  const { guests, viewport } = route.params;
 
   useEffect(() => {
     const fetchPosts = async () => {
@@ -54,7 +55,6 @@ const SearchResultsTabNavigator = (props) => {
   return (
     <Tab.Navigator 
       screenOptions={{
-        headerShown: false,
         activeTintColor: '#f15454',
         indicatorStyle: {
           backgroundColor: '#f15454',
@@ -63,12 +63,12 @@ const SearchResultsTabNavigator = (props) => {
     >
       <Tab.Screen name={"list"}>
         {() => (
-          <SearchResults posts={posts} viewport={viewport} />
+          <SearchResults posts={posts} />
         )}
       </Tab.Screen>
       <Tab.Screen name={"map"}>
         {() => (
-          <SearchResultsMap posts={posts} viewport={viewport} />
+          <SearchResultsMap posts={posts} />
         )}
       </Tab.Screen>
     </Tab.Navigator>

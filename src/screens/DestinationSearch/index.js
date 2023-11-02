@@ -1,12 +1,8 @@
 import React, {useState} from "react";
 import { View, TextInput, Text, FlatList, Pressable } from "react-native";
 import styles from './styles.js';
-
-import searchResults from '../../../assets/data/search';
 import {useNavigation} from '@react-navigation/native';
 import SuggestionRow from "./SuggestionRow";
-
-import feed from "../../../assets/data/feed";
 
 import { GooglePlacesAutocomplete } from "react-native-google-places-autocomplete";
 
@@ -35,6 +31,7 @@ const DestinationSearchScreen = (props) => {
         suppressDefaultStyles
         renderRow={(item) => <SuggestionRow item={item} />}
       />
+
     </View>
   );
 };

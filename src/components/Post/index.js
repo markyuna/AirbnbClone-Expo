@@ -3,25 +3,32 @@ import {View, Text, Image, Pressable} from 'react-native';
 import styles from './styles.js';
 import { useNavigation } from '@react-navigation/native';
 
+
 const days = 7;
 
-const Post = (props) => {
+const Post = ({ post }) => {
 
-  const post = props.post;
+  // const {post} = props;
 
   const navigation = useNavigation();
 
   const goToPostPage = () => {
-    navigation.navigate('Post', {postId: post.id});
+    if (post && post.id) {
+      navigation.navigate('Post', {postId: post.id});
+    }
+  }
+
+  if (!post) {
+    // Puedes manejar el caso en el que post sea undefined o nulo
+    return null; // O mostrar un mensaje de error o algo adecuado
   }
 
   return (
     <Pressable onPress={goToPostPage} style={styles.container}>
       {/* Image  */}
-      <Image
-        style={styles.image}
-        source={{uri: post.image}}
-      />
+      {post.image && (
+        <Image style={styles.image} source={{ uri: post.image }} />
+      )}
 
       {/* Bed & Bedroom  */}
       <Text style={styles.bedrooms}>
@@ -45,5 +52,6 @@ const Post = (props) => {
     </Pressable>
   );
 };
+
 
 export default Post;

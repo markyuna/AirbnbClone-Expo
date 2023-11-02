@@ -9,7 +9,7 @@ import { FontAwesome5, Feather } from '@expo/vector-icons';
 
 const Tab = createBottomTabNavigator();
 
-const HomeTabNavigator = (props) => {
+  const HomeTabNavigator = (props) => {
   return (
     <Tab.Navigator
       screenOptions={{
