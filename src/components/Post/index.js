@@ -1,34 +1,26 @@
 import React from 'react';
-import {View, Text, Image, Pressable} from 'react-native';
+import { View, Text, Image, Pressable } from 'react-native';
 import styles from './styles.js';
 import { useNavigation } from '@react-navigation/native';
-
+import PropTypes from 'prop-types';
 
 const days = 7;
 
 const Post = ({ post }) => {
-
-  // const {post} = props;
+  if (!post || !post.image) {
+    return null; // Si 'post' es nulo o no tiene 'image', no renderizamos nada
+  }
 
   const navigation = useNavigation();
 
   const goToPostPage = () => {
-    if (post && post.id) {
-      navigation.navigate('Post', {postId: post.id});
-    }
-  }
-
-  if (!post) {
-    // Puedes manejar el caso en el que post sea undefined o nulo
-    return null; // O mostrar un mensaje de error o algo adecuado
-  }
+    navigation.navigate('Post', { postId: post.id });
+  };
 
   return (
     <Pressable onPress={goToPostPage} style={styles.container}>
       {/* Image  */}
-      {post.image && (
-        <Image style={styles.image} source={{ uri: post.image }} />
-      )}
+      <Image style={styles.image} source={{ uri: post.image }} />
 
       {/* Bed & Bedroom  */}
       <Text style={styles.bedrooms}>
@@ -43,8 +35,7 @@ const Post = ({ post }) => {
       {/*  Old price & new price */}
       <Text style={styles.prices}>
         <Text style={styles.oldPrice}>${post.oldPrice}</Text>
-        <Text style={styles.price}>  ${post.newPrice} </Text>
-        / night
+        <Text style={styles.price}> ${post.newPrice} </Text> / night
       </Text>
 
       {/*  Total price */}
@@ -53,5 +44,17 @@ const Post = ({ post }) => {
   );
 };
 
+Post.propTypes = {
+  post: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    image: PropTypes.string,
+    bed: PropTypes.number.isRequired,
+    bedroom: PropTypes.number.isRequired,
+    type: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    oldPrice: PropTypes.number.isRequired,
+    newPrice: PropTypes.number.isRequired,
+  }),
+};
 
 export default Post;
