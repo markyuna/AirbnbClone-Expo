@@ -6,9 +6,9 @@ import { useNavigation } from '@react-navigation/native';
 const days = 7;
 
 const Post = ( props ) => {
-  if (!post || !post.image) {
-    return null; // Si 'post' es nulo o no tiene 'image', no renderizamos nada
-  }
+  // if (!post || !post.image) {
+  //   return null; // Si 'post' es nulo o no tiene 'image', no renderizamos nada
+  // }
 
   const post = props.post;
 
