@@ -5,6 +5,7 @@ import HomeScreen from '../screens/Home';
 import ProfileScreen from '../screens/Profile';
 
 import { FontAwesome5, Feather } from '@expo/vector-icons';
+import PostScreen from '../screens/PostScreen';
 // import SearchResultsMaps from '../screens/SearchResultsMaps';
 
 const Tab = createBottomTabNavigator();
@@ -18,6 +19,7 @@ const Tab = createBottomTabNavigator();
       <Tab.Screen
         name={'Explore'}
         component={ExploreNavigator}
+        // component={PostScreen}
         options={{
           tabBarIcon: ({color}) => (
             <FontAwesome5 name="search-location" size={25} color={color} />

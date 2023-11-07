@@ -45,6 +45,7 @@ export const listPosts = /* GraphQL */ `
         updatedAt
       }
       nextToken
+      __typename
     }
   }
 `;

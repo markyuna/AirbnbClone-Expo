@@ -1,13 +1,6 @@
 export type AmplifyDependentResourcesAttributes = {
-  "api": {
-    "airbnbcloneexpo": {
-      "GraphQLAPIEndpointOutput": "string",
-      "GraphQLAPIIdOutput": "string",
-      "GraphQLAPIKeyOutput": "string"
-    }
-  },
   "auth": {
-    "AirbnbCloneExpo": {
+    "airbnbcloneexpo1fc0efb9": {
       "AppClientID": "string",
       "AppClientIDWeb": "string",
       "IdentityPoolId": "string",

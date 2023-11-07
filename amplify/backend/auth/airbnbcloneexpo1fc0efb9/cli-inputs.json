@@ -1,10 +1,10 @@
 {
   "version": "1",
   "cognitoConfig": {
-    "identityPoolName": "testAuthIdentityPool",
+    "identityPoolName": "airbnbcloneexpo1fc0efb9_identitypool_1fc0efb9",
     "allowUnauthenticatedIdentities": false,
-    "resourceNameTruncated": "airbnbae89fe57",
-    "userPoolName": "AirbnbCloneExpo",
+    "resourceNameTruncated": "airbnb1fc0efb9",
+    "userPoolName": "airbnbcloneexpo1fc0efb9_userpool_1fc0efb9",
     "autoVerifiedAttributes": [
       "email"
     ],
@@ -14,32 +14,31 @@
     ],
     "smsAuthenticationMessage": "Your authentication code is {####}",
     "smsVerificationMessage": "Your verification code is {####}",
-    "emailVerificationSubject": "Verification code: {####}",
-    "emailVerificationMessage": "Verification code: {####}",
+    "emailVerificationSubject": "Your verification code",
+    "emailVerificationMessage": "Your verification code is {####}",
     "defaultPasswordPolicy": false,
-    "passwordPolicyMinLength": 6,
+    "passwordPolicyMinLength": 8,
     "passwordPolicyCharacters": [],
     "requiredAttributes": [
-      "email",
-      "name"
+      "email"
     ],
     "aliasAttributes": [],
     "userpoolClientGenerateSecret": false,
     "userpoolClientRefreshTokenValidity": 30,
-    "userpoolClientWriteAttributes": [],
-    "userpoolClientReadAttributes": [],
-    "userpoolClientLambdaRole": "Airbnbae89fe57_userpoolclient_lambda_role",
+    "userpoolClientWriteAttributes": [
+      "email"
+    ],
+    "userpoolClientReadAttributes": [
+      "email"
+    ],
+    "userpoolClientLambdaRole": "airbnb1fc0efb9_userpoolclient_lambda_role",
     "userpoolClientSetAttributes": false,
-    "sharedId": "ae89fe57",
-    "resourceName": "AirbnbCloneExpo",
+    "sharedId": "1fc0efb9",
+    "resourceName": "airbnbcloneexpo1fc0efb9",
     "authSelections": "identityPoolAndUserPool",
-    "serviceName": "Cognito",
-    "useDefault": "manual",
-    "userPoolGroups": false,
+    "useDefault": "default",
     "userPoolGroupList": [],
-    "adminQueries": false,
-    "thirdPartyAuth": false,
-    "authProviders": [],
+    "serviceName": "Cognito",
     "usernameCaseSensitive": false,
     "useEnabledMfas": true
   }

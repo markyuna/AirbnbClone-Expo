@@ -117,10 +117,10 @@ query showPropertiesBasedOnLocation {
   listPosts(filter: {
     and: {
       latitude: {
-        between: [48.90214747577797, 48.81556220872687]
+        between: [27.99643616103738, 28.617893425551618]
       }, 
       longitude: {
-        between: [2.469850925555473, 2.224219054341255]
+        between: [-16.945665756405603, -16.134050770346267]
       }
     }
   }) {

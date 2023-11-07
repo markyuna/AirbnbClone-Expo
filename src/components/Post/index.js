@@ -2,19 +2,20 @@ import React from 'react';
 import { View, Text, Image, Pressable } from 'react-native';
 import styles from './styles.js';
 import { useNavigation } from '@react-navigation/native';
-import PropTypes from 'prop-types';
 
 const days = 7;
 
-const Post = ({ post }) => {
+const Post = ( props ) => {
   if (!post || !post.image) {
     return null; // Si 'post' es nulo o no tiene 'image', no renderizamos nada
   }
 
+  const post = props.post;
+
   const navigation = useNavigation();
 
   const goToPostPage = () => {
-    navigation.navigate('Post', { postId: post.id });
+    navigation.navigate('Post', { postId: postIdValue });
   };
 
   return (
@@ -42,19 +43,6 @@ const Post = ({ post }) => {
       <Text style={styles.totalPrice}>${post.newPrice * days} total</Text>
     </Pressable>
   );
-};
-
-Post.propTypes = {
-  post: PropTypes.shape({
-    id: PropTypes.number.isRequired,
-    image: PropTypes.string,
-    bed: PropTypes.number.isRequired,
-    bedroom: PropTypes.number.isRequired,
-    type: PropTypes.string.isRequired,
-    title: PropTypes.string.isRequired,
-    oldPrice: PropTypes.number.isRequired,
-    newPrice: PropTypes.number.isRequired,
-  }),
 };
 
 export default Post;

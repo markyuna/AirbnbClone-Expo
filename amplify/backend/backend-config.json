@@ -1,24 +1,7 @@
 {
-  "api": {
-    "airbnbcloneexpo": {
-      "dependsOn": [],
-      "output": {
-        "authConfig": {
-          "additionalAuthenticationProviders": [],
-          "defaultAuthentication": {
-            "apiKeyConfig": {
-              "apiKeyExpirationDays": 7
-            },
-            "authenticationType": "API_KEY"
-          }
-        }
-      },
-      "providerPlugin": "awscloudformation",
-      "service": "AppSync"
-    }
-  },
+  "api": {},
   "auth": {
-    "AirbnbCloneExpo": {
+    "airbnbcloneexpo1fc0efb9": {
       "customAuth": false,
       "dependsOn": [],
       "frontendAuthConfig": {
@@ -28,11 +11,10 @@
         ],
         "passwordProtectionSettings": {
           "passwordPolicyCharacters": [],
-          "passwordPolicyMinLength": 6
+          "passwordPolicyMinLength": 8
         },
         "signupAttributes": [
-          "EMAIL",
-          "NAME"
+          "EMAIL"
         ],
         "socialProviders": [],
         "usernameAttributes": [],
