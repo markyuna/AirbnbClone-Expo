@@ -11,6 +11,7 @@ const HomeScreen = (props) => {
   return (
     <View style={{flex: 1}}>
       <Pressable
+        testID="searchButton"
         style={styles.searchButton}
         onPress={() => navigation.navigate('Destination Search')}>
         <FontAwesome5 name="search" size={25} color={'#f15454'} />

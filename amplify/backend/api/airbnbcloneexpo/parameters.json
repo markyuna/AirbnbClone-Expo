@@ -1,5 +1,6 @@
 {
   "AppSyncApiName": "airbnbcloneexpo",
   "DynamoDBBillingMode": "PAY_PER_REQUEST",
-  "DynamoDBEnableServerSideEncryption": false
+  "DynamoDBEnableServerSideEncryption": false,
+  "AuthModeLastUpdated": "2023-11-07T20:31:31.215Z"
 }

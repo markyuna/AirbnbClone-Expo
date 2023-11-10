@@ -1,9 +1,11 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, {useState, useEffect, useRef} from "react";
 import { View, FlatList, useWindowDimensions } from "react-native";
-import MapView, { Marker, PROVIDER_GOOGLE } from 'react-native-maps';
+import MapView, {Marker, PROVIDER_GOOGLE} from 'react-native-maps';
 import CustomMarker from "../../components/CustomMarker";
 import PostCarouselItem from "../../components/PostCarouselItem";
 
+import { API, graphqlOperation } from 'aws-amplify';
+import { listPosts } from '../../graphql/queries';
 
 const SearchResultsMaps = (props) => {
 
@@ -14,13 +16,13 @@ const SearchResultsMaps = (props) => {
   const flatlist = useRef();
   const map = useRef();
 
-  const viewConfig = useRef({ itemVisiblePercentThreshold: 70 });
-  const onViewChanged = useRef(({ viewableItems }) => {
+  const viewConfig = useRef({itemVisiblePercentThreshold: 70})
+  const onViewChanged = useRef(({viewableItems}) => {
     if (viewableItems.length > 0) {
       const selectedPlace = viewableItems[0].item;
-      setSelectedPlaceId(selectedPlace.id);
+      setSelectedPlaceId(selectedPlace.id)
     }
-  });
+  })
 
   const width = useWindowDimensions().width;
 
@@ -28,8 +30,8 @@ const SearchResultsMaps = (props) => {
     if (!selectedPlaceId || !flatlist) {
       return;
     }
-    const index = posts.findIndex(place => place.id === selectedPlaceId);
-    flatlist.current.scrollToIndex({ index });
+    const index = posts.findIndex(place => place.id === selectedPlaceId)
+    flatlist.current.scrollToIndex({index})
 
     const selectedPlace = posts[index];
     const region = {
@@ -37,15 +39,15 @@ const SearchResultsMaps = (props) => {
       longitude: selectedPlace.longitude,
       latitudeDelta: 0.8,
       longitudeDelta: 0.8,
-    };
+    }
     map.current.animateToRegion(region);
-  }, [selectedPlaceId]);
+  }, [selectedPlaceId])
 
   return (
-    <View style={{ width: '100%', height: '100%' }}>
+    <View style={{width: '100%', height: '100%'}}>
       <MapView
         ref={map}
-        style={{ width: '100%', height: '100%' }}
+        style={{width: '100%', height: '100%'}}
         provider={PROVIDER_GOOGLE}
         initialRegion={{
           latitude: 28.3279822,
@@ -53,10 +55,9 @@ const SearchResultsMaps = (props) => {
           latitudeDelta: 0.8,
           longitudeDelta: 0.8,
         }}
-      > 
+      >
         {posts.map(place => (
           <CustomMarker
-            key={place.id}
             coordinate={{ latitude: place.latitude, longitude: place.longitude }}
             price={place.newPrice}
             isSelected={place.id === selectedPlaceId}
@@ -65,11 +66,11 @@ const SearchResultsMaps = (props) => {
         )}
       </MapView>
 
-      <View style={{ position: 'absolute', bottom: 10 }}>
+      <View style={{position: 'absolute', bottom: 10}}>
         <FlatList
           ref={flatlist}
-          data={posts} 
-          renderItem={({ item }) => <PostCarouselItem post={item} />}
+          data={posts}
+          renderItem={({item}) => <PostCarouselItem post={item} />}
           horizontal
           showsHorizontalScrollIndicator={false}
           snapToInterval={width - 60}

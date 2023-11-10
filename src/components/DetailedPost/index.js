@@ -2,9 +2,13 @@ import React from 'react';
 import {View, Text, Image, ScrollView,} from 'react-native';
 import styles from './styles.js';
 
+const days = 7;
+
 const Post = (props) => {
 
-  const post = props.post;
+  const post = props.posts;
+  console.log("AQUI EL POST", post);
+  console.log(props);
 
   return (
     <ScrollView>
