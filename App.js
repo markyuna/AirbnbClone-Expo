@@ -9,7 +9,7 @@
 import React from 'react';
 import {SafeAreaView, StyleSheet, Text} from 'react-native';
 import Router from './src/navigation/Router';
-// import { withAuthenticator, AmplifyTheme } from '@aws-amplify/ui-react-native';
+import { withAuthenticator } from '@aws-amplify/ui-react-native';
 
 
 import {Amplify} from 'aws-amplify';
@@ -32,4 +32,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default App;
+export default withAuthenticator(App);
